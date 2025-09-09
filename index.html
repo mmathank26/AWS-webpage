@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Meghal Mathankar • Portfolio</title>
+  <meta name="description" content="Cloud & DevOps portfolio of Meghal Mathankar – projects, skills, experience, and contact." />
+  <meta property="og:title" content="Meghal Mathankar • Portfolio" />
+  <meta property="og:description" content="Cloud & DevOps portfolio – projects, skills, experience, and contact." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#111827" />
+  <!-- <link rel="icon" href="/favicon.ico" /> -->
+  <style>
+    :root{
+      --bg:#0b1020;           /* Deep navy */
+      --panel:#111732;        /* Card background */
+      --muted:#94a3b8;        /* Slate */
+      --text:#e5e7eb;         /* Light gray */
+      --brand:#60a5fa;        /* Blue */
+      --brand-2:#a78bfa;      /* Violet */
+      --accent:#34d399;       /* Emerald */
+      --border:rgba(255,255,255,.08);
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+      --radius:18px;
+      --radius-sm:12px;
+      --maxw:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:radial-gradient(1200px 600px at 10% -10%,rgba(96,165,250,.2),transparent),radial-gradient(1000px 500px at 90% -20%,rgba(167,139,250,.15),transparent),var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--maxw);margin-inline:auto;padding:0 20px}
+    /* Navbar */
+    .nav{position:sticky;top:0;z-index:50;background:rgba(11,16,32,.6);backdrop-filter:saturate(1.3) blur(10px);border-bottom:1px solid var(--border)}
+    .nav__inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;gap:10px;align-items:center;font-weight:700;letter-spacing:.3px}
+    .brand__dot{width:10px;height:10px;border-radius:999px;background:linear-gradient(45deg,var(--brand),var(--brand-2));box-shadow:0 0 18px rgba(96,165,250,.8)}
+    .nav__links{display:flex;gap:14px}
+    .chip{border:1px solid var(--border);padding:8px 14px;border-radius:999px;color:var(--muted)}
+    .chip:hover{border-color:rgba(255,255,255,.25);color:#fff}
+
+    /* Hero */
+    .hero{padding:84px 0 56px;border-bottom:1px solid var(--border)}
+    .hero__content{display:grid;grid-template-columns:1.2fr .8fr;gap:26px;align-items:center}
+    .badge{display:inline-flex;gap:8px;align-items:center; border:1px solid var(--border); color:var(--muted); padding:6px 10px;border-radius:999px;font-size:13px}
+    .badge .dot{width:6px;height:6px;border-radius:999px;background:var(--accent);box-shadow:0 0 10px var(--accent)}
+    h1{font-size:42px;line-height:1.15;margin:14px 0}
+    .lead{color:#dbeafe;opacity:.95;font-size:18px}
+    .hero__card{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+    .btn{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--border);padding:10px 14px;border-radius:12px}
+    .btn--primary{background:linear-gradient(90deg,var(--brand),var(--brand-2));color:#0b1020;font-weight:700;border:none}
+    .btn:hover{transform:translateY(-1px)}
+
+    /* Sections */
+    section{padding:56px 0}
+    .section__head{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+    .section__title{font-size:26px;margin:0}
+    .grid{display:grid;gap:18px}
+    .grid--3{grid-template-columns:repeat(3,1fr)}
+    .grid--2{grid-template-columns:repeat(2,1fr)}
+
+    /* Cards */
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border:1px solid var(--border);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+    .card h3{margin:0 0 6px;font-size:18px}
+    .card p{margin:0;color:var(--muted)}
+    .tag{display:inline-block;padding:6px 10px;border:1px solid var(--border);border-radius:999px;font-size:12px;color:var(--muted);margin:6px 6px 0 0}
+
+    /* Experience timeline */
+    .timeline{position:relative;margin:12px 0 0 0}
+    .timeline::before{content:"";position:absolute;left:12px;top:0;bottom:0;width:2px;background:linear-gradient(var(--brand),transparent)}
+    .timeline__item{position:relative;padding-left:40px;margin:0 0 22px}
+    .timeline__item::before{content:"";position:absolute;left:6px;top:6px;width:14px;height:14px;border-radius:999px;background:linear-gradient(45deg,var(--brand),var(--brand-2));box-shadow:0 0 12px rgba(96,165,250,.7)}
+
+    /* Footer */
+    footer{border-top:1px solid var(--border);padding:26px 0;color:var(--muted);text-align:center}
+
+    /* Responsive */
+    @media (max-width: 900px){
+      .hero__content{grid-template-columns:1fr}
+      .grid--3{grid-template-columns:1fr}
+      .grid--2{grid-template-columns:1fr}
+      h1{font-size:34px}
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="nav">
+    <div class="container nav__inner">
+      <div class="brand"><span class="brand__dot"></span> Meghal Mathankar</div>
+      <nav class="nav__links">
+        <a class="chip" href="#about">About</a>
+        <a class="chip" href="#skills">Skills</a>
+        <a class="chip" href="#projects">Projects</a>
+        <a class="chip" href="#experience">Experience</a>
+        <a class="chip" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero__content">
+      <div>
+        <span class="badge"><span class="dot"></span> Available for full‑time / freelance</span>
+        <h1>Cloud & DevOps Engineer building reliable, scalable platforms on AWS</h1>
+        <p class="lead">I design infrastructure, automate delivery pipelines, and keep systems observable and secure. Tools I live in: AWS, Kubernetes, Terraform, GitHub Actions, and more.</p>
+        <div style="display:flex;gap:12px;margin-top:16px">
+          <a class="btn btn--primary" href="#projects">View Projects →</a>
+          <a class="btn" href="mailto:yourname@example.com">Email Me</a>
+        </div>
+      </div>
+      <div class="hero__card">
+        <div class="grid grid--2" style="gap:12px">
+          <div class="card"><h3>Certifications</h3><p>AWS SAA, CKA, Terraform Associate</p></div>
+          <div class="card"><h3>Focus</h3><p>Platform Engineering, IaC, Observability</p></div>
+          <div class="card"><h3>Location</h3><p>Pune, India • Remote‑friendly</p></div>
+          <div class="card"><h3>Contact</h3><p><a href="mailto:yourname@example.com">yourname@example.com</a></p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <div class="section__head">
+        <h2 class="section__title">About</h2>
+      </div>
+      <div class="card">
+        <p>Hi, I’m <strong>Meghal Mathankar</strong> — a Cloud/DevOps engineer. I help teams ship faster and safer by automating infrastructure and deployments, baking in security, and building great developer experiences.</p>
+        <p style="margin-top:10px">I enjoy turning requirements into simple, resilient architectures. Recently I’ve been streamlining CI/CD with GitHub Actions and deploying workloads to EKS with Terraform. I also like teaching and documenting what I learn.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <div class="container">
+      <div class="section__head">
+        <h2 class="section__title">Skills</h2>
+      </div>
+      <div class="grid grid--3">
+        <div class="card">
+          <h3>Cloud</h3>
+          <p>AWS (EC2, EKS, ECS, Lambda, RDS, S3, CloudFront, Route 53)</p>
+          <div>
+            <span class="tag">IAM</span>
+            <span class="tag">VPC</span>
+            <span class="tag">Networking</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>DevOps</h3>
+          <p>Docker, Kubernetes, GitHub Actions, Argo CD, Helm</p>
+          <div>
+            <span class="tag">CI/CD</span>
+            <span class="tag">GitOps</span>
+            <span class="tag">Observability</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Infrastructure as Code</h3>
+          <p>Terraform, CDKTF, Ansible</p>
+          <div>
+            <span class="tag">Modules</span>
+            <span class="tag">Pipelines</span>
+            <span class="tag">Policy as Code</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <div class="container">
+      <div class="section__head">
+        <h2 class="section__title">Selected Projects</h2>
+        <a class="chip" href="https://github.com/yourusername" target="_blank" rel="noreferrer">GitHub →</a>
+      </div>
+      <div class="grid grid--3">
+        <article class="card">
+          <h3>EKS Platform with GitOps</h3>
+          <p>Multi‑env EKS with Terraform modules, Argo CD, and Helm charts. Blue/green deploys, autoscaling, and IRSA.</p>
+          <div>
+            <span class="tag">AWS</span><span class="tag">EKS</span><span class="tag">Argo CD</span>
+          </div>
+        </article>
+        <article class="card">
+          <h3>Serverless API</h3>
+          <p>API Gateway + Lambda + DynamoDB with IaC and canary releases. Added tracing with X‑Ray and alarms.</p>
+          <div>
+            <span class="tag">Lambda</span><span class="tag">DynamoDB</span><span class="tag">IaC</span>
+          </div>
+        </article>
+        <article class="card">
+          <h3>Observability Stack</h3>
+          <p>Prometheus + Grafana + Loki unified dashboards; SLOs and on‑call runbooks reduced MTTR by 35%.</p>
+          <div>
+            <span class="tag">K8s</span><span class="tag">Grafana</span><span class="tag">SLO</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience">
+    <div class="container">
+      <div class="section__head">
+        <h2 class="section__title">Experience</h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline__item card">
+          <h3>Senior DevOps Engineer • Acme Corp</h3>
+          <p class="muted">2023 — Present</p>
+          <p>Led migration to EKS and implemented GitOps; reduced deployment time from hours to minutes.</p>
+        </div>
+        <div class="timeline__item card">
+          <h3>Cloud Engineer • Example Ltd</h3>
+          <p class="muted">2021 — 2023</p>
+          <p>Built Terraform modules and multi‑account AWS foundations with SSO and guardrails.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <div class="section__head">
+        <h2 class="section__title">Contact</h2>
+      </div>
+      <div class="card">
+        <p>Email: <a href="mailto:yourname@example.com">yourname@example.com</a></p>
+        <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noreferrer">linkedin.com/in/yourprofile</a></p>
+        <p>GitHub: <a href="https://github.com/yourusername" target="_blank" rel="noreferrer">github.com/yourusername</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © <span id="year"></span> Meghal Mathankar • Built with HTML/CSS • Hosted on AWS Amplify
+  </footer>
+
+  <script>
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        const target=document.querySelector(a.getAttribute('href'));
+        if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth',block:'start'});} 
+      });
+    });
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
